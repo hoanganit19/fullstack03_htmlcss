@@ -1,0 +1,102 @@
+.counter {
+  @include section-base(30px);
+  .counter-heading {
+    text-align: center;
+  }
+
+  .counter-item {
+    text-align: center;
+    position: relative;
+    box-shadow: -5.8333330154418945px 8.333333015441895px 72.5px 0px
+      rgba(54, 54, 54, 0.12);
+    padding: 33.33px;
+    border-radius: 3.33px;
+    background: #fff;
+
+    .counter-icon {
+      background: #fff0e7;
+      display: inline-block;
+      padding: 19.17px;
+      border-radius: 10px;
+      margin-bottom: 23.33px;
+    }
+
+    span {
+      display: block;
+      font-weight: 800;
+      font-size: 4.3rem;
+      &:last-child {
+        font-weight: normal;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .counter {
+    @include section-base(100px);
+    .counter-heading {
+      margin-bottom: 115px;
+      text-align: center;
+      h2 {
+        font-size: 3.1rem;
+        line-height: 1.3;
+        margin-bottom: 24.33px;
+      }
+    }
+
+    .counter-item {
+      text-align: left;
+    }
+
+    [class^="col-"] {
+      &:first-child {
+        .counter-item {
+          &::before {
+            content: "";
+            display: block;
+            width: 235px;
+            height: 235px;
+            background: #dcffca;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            translate: -50% -50%;
+            z-index: -1;
+          }
+        }
+      }
+
+      &:last-child {
+        .counter-item {
+          &::after {
+            content: "";
+            display: block;
+            width: 235px;
+            height: 235px;
+            background: #ffd5bd;
+            border-radius: 50%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            translate: 50% 50%;
+            z-index: -1;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        .counter-item {
+          padding: 60.83px 33.33px;
+          max-width: 90%;
+          margin: 0 auto;
+          .counter-icon {
+            background: #f2ffec;
+          }
+        }
+      }
+    }
+  }
+}

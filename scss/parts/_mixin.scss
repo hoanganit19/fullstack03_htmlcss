@@ -1,0 +1,8 @@
+@mixin transition($property, $duration: 0.4s, $timing: ease) {
+  transition: $duration $timing;
+  transition-property: $property;
+}
+
+@mixin section-base($spacer: 50px) {
+  padding: $spacer 0;
+}

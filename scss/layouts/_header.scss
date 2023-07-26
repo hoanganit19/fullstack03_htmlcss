@@ -1,0 +1,159 @@
+.header {
+  position: relative;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+  padding: 15px 0;
+  [class^="col-"] {
+    margin: 0;
+  } 
+
+  .header-logo {
+    text-align: center;
+    img {
+        max-height: 80px;
+        width: auto;
+    }
+  } 
+
+  .menu-row {
+    align-items: flex-start;
+    input[type="checkbox"] {
+      &:checked {
+        + .header-menu {
+          translate: 0;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .header-menu {
+    @include transition("translate, opacity");
+    translate: -100%;
+    opacity: 0;
+    background: $secondaryColor;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    > ul {
+        display: block;
+        align-items: center;
+        gap: 0 60px;
+        > li {
+            > a {
+                @include transition(color);
+                display: block;
+                font-size: 2rem;
+                color: #fff;
+                font-weight: 600;
+                padding: 10px 0;
+                &.active {
+                    color: #fff;
+                }
+                &:hover {
+                    @extend .active;
+                }
+            }
+        }
+    }
+  }
+
+  .header-icon {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+   
+    .cart-icon {
+        display: none;
+        position: relative;
+        span {
+            position: absolute;
+            right: -7px;
+            top: -8px;
+            display: block;
+            background: $secondaryColor;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            padding: 0 6px;
+        }
+    }
+
+    .search-icon {
+      cursor: pointer;
+    }
+    
+  }
+
+  .toggle-menu {
+    display: flex;
+    align-items: center;
+    label {
+      font-size: 3rem;
+    }
+  }
+
+}
+
+//Responsive
+@media screen and (min-width: 991px) {
+  .header {
+    .toggle-menu {
+      display: none;
+     
+    }
+
+    .header-icon {
+      .cart-icon {
+        display: block;
+      }
+    }
+
+    .header-menu {
+      opacity: 1;
+      transition: none;
+      translate: 0;      
+      background: transparent;
+      position: static;
+      padding: 0; 
+      > ul {
+        display: flex;
+        gap: 0 30px;
+         > li {
+          > a {
+            color: $textColor; 
+            padding: 0;
+            &.active {
+              color: $primaryColor;
+            }
+            &:hover {
+                @extend .active;
+            }
+          }
+         }
+      }
+    }
+
+    .menu-row {
+      align-items: center;
+    }
+    
+    .header-logo {
+      text-align: left;
+      img {
+        max-height: 157px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    .header-menu {
+      > ul {
+        gap: 0 60px;
+      }
+    }
+  }
+}

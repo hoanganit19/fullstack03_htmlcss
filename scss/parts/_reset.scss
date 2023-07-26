@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;	
+    outline: 0;
+}
+
+html {
+    font-size: 10px; //62.5%
+}
+
+body {
+    font-size: $fontSize;
+    line-height: 1.5;
+    color: $textColor;
+    font-family: $fontFamily;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: $textColor;
+}
+
+ul, ol {
+    list-style: none;
+}

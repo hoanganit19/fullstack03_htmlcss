@@ -1,0 +1,73 @@
+.hero {
+  padding: 0 10px;
+}
+.hero > .row > [class^=col-]:last-child {
+  background: #dcffca;
+}
+.hero .hero-inner {
+  padding: 15px 0;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero .hero-inner h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  text-align: center;
+}
+.hero .hero-inner h2 {
+  font-size: 5rem;
+  font-weight: 800;
+  margin: 15px 0;
+  line-height: 1.1;
+  text-align: center;
+}
+.hero .hero-image {
+  display: flex;
+  padding: 77px 0;
+}
+.hero .hero-image .text-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.hero .hero-image span {
+  font-size: 5rem;
+  font-weight: 800;
+  opacity: 0.150000006;
+  color: #216000;
+  rotate: 90deg;
+  display: block;
+  line-height: 5rem;
+}
+
+@media screen and (min-width: 576px) {
+  .hero .hero-image span {
+    font-size: 9rem;
+    line-height: 9rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .hero .hero-inner {
+    width: 80%;
+    padding: 0;
+  }
+  .hero .hero-inner h1,
+  .hero .hero-inner h2 {
+    text-align: left;
+  }
+  .hero .hero-image .text-wrap {
+    margin-left: -100px;
+  }
+  .hero .hero-image span {
+    font-size: 13rem;
+    line-height: 13rem;
+  }
+  .hero .hero-image > .row > [class^=col-]:first-child {
+    margin-left: -100px;
+  }
+}
+
+/*# sourceMappingURL=hero.css.map */
